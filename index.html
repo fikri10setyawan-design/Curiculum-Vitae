@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Octavian Fikri Setyawan — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFEDE6;
+    --sheet:#FBFAF7;
+    --ink:#1E2321;
+    --muted:#6B6A63;
+    --line:#C9C4B8;
+    --blueprint:#2B4C5C;
+    --blueprint-soft:#6E8A97;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:radial-gradient(circle at 1px 1px, rgba(43,76,92,0.08) 1px, transparent 0);
+    background-size:24px 24px;
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding:clamp(18px,5vw,56px) 14px 80px;
+  }
+  .sheet{
+    max-width:740px;
+    margin:0 auto;
+    background:var(--sheet);
+    border:1px solid var(--line);
+    box-shadow:0 1px 2px rgba(30,35,33,0.06), 0 18px 40px -20px rgba(30,35,33,0.35);
+    position:relative;
+    padding:clamp(28px,5vw,52px) clamp(24px,6vw,56px) 40px;
+  }
+  header{margin-bottom:30px;}
+  .doc-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--blueprint-soft);
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    margin:0 0 10px;
+  }
+  h1{
+    font-family:'IBM Plex Sans Condensed',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+    font-size:clamp(28px,5vw,38px);
+    margin:0 0 8px;
+    line-height:1.05;
+  }
+  .role{
+    font-size:15px;
+    color:var(--ink);
+    margin:0 0 16px;
+    font-weight:500;
+  }
+  .meta{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--muted);
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px 10px;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+  }
+  .meta a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line);}
+  .meta a:hover{color:var(--blueprint);border-color:var(--blueprint);}
+  .meta span.sep{color:var(--line);}
+
+  .op-section h2{
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:15.5px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    margin:34px 0 0;
+  }
+  .dim-line{position:relative;height:1px;background:var(--line);margin:8px 0 16px;}
+  .dim-line::before,.dim-line::after{content:"";position:absolute;top:-4px;width:1px;height:9px;background:var(--line);}
+  .dim-line::before{left:0;}
+  .dim-line::after{right:0;}
+
+  .op-body p{
+    font-size:13.8px;
+    line-height:1.65;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  .op-body p:last-child{margin-bottom:0;}
+
+  .row{
+    display:flex;
+    align-items:flex-end;
+    gap:10px;
+    margin-bottom:2px;
+  }
+  .row .name{font-weight:600;font-size:14px;}
+  .row .leader{flex:1;border-bottom:1px dotted var(--line);height:1px;margin-bottom:5px;}
+  .row .date{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);white-space:nowrap;}
+
+  h3.sub{
+    font-size:13.5px;
+    font-weight:600;
+    margin:18px 0 6px;
+    color:var(--blueprint);
+  }
+  h3.sub:first-child{margin-top:0;}
+
+  ul.tick{list-style:none;margin:8px 0 4px;padding:0;}
+  ul.tick li{
+    position:relative;
+    padding-left:16px;
+    font-size:13.5px;
+    line-height:1.6;
+    margin-bottom:5px;
+    color:var(--ink);
+  }
+  ul.tick li::before{
+    content:"▸";
+    position:absolute;
+    left:0;
+    color:var(--blueprint);
+    font-size:11px;
+    top:2px;
+  }
+
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--blueprint);
+    border:1px solid var(--blueprint-soft);
+    background:rgba(43,76,92,0.05);
+    padding:5px 10px;
+    border-radius:3px;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .tag:hover{background:rgba(43,76,92,0.12);transform:translateY(-1px);}
+
+  .lang-line{font-size:13.8px;}
+
+  /* Visible by default. JS only ADDS a subtle entrance transition
+     (progressive enhancement) — content never depends on JS to show. */
+  .op-section{opacity:1;transform:none;}
+  .op-section.reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease, transform .5s ease;}
+  .op-section.reveal.in{opacity:1;transform:translateY(0);}
+
+  .toolbar{
+    max-width:740px;
+    margin:0 auto 14px;
+    display:flex;
+    justify-content:flex-end;
+  }
+  .print-btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--blueprint);
+    background:var(--sheet);
+    border:1px solid var(--blueprint-soft);
+    border-radius:3px;
+    padding:8px 14px;
+    cursor:pointer;
+    letter-spacing:.03em;
+  }
+  .print-btn:hover{background:rgba(43,76,92,0.08);}
+  .print-btn:focus-visible, a:focus-visible, .tag:focus-visible{outline:2px solid var(--blueprint);outline-offset:2px;}
+
+  footer.rev{
+    margin-top:34px;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    color:var(--muted);
+    letter-spacing:.03em;
+  }
+
+  @media (max-width:600px){
+    .row{flex-wrap:wrap;}
+    .row .leader{display:none;}
+    .row .date{order:3;flex-basis:100%;}
+  }
+
+  @media print{
+    body{background:#fff;padding:0;}
+    .toolbar{display:none;}
+    .sheet{box-shadow:none;border:none;max-width:100%;padding:0;}
+    .op-section{opacity:1 !important;transform:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="print-btn" onclick="window.print()">⭳ Cetak / Simpan sebagai PDF</button>
+</div>
+
+<main class="sheet">
+  <header>
+    <p class="doc-label">Curriculum Vitae — Dokumen Digital</p>
+    <h1>Octavian Fikri Setyawan</h1>
+    <p class="role">Operator Produksi Manufaktur · Excel Tingkat Lanjut · Otomasi Data dengan Python</p>
+    <div class="meta">
+      <a href="mailto:fikri.10setyawan@gmail.com">fikri.10setyawan@gmail.com</a>
+      <span class="sep">·</span><span>0895-6160-13219</span>
+      <span class="sep">·</span><span>Bekasi Utara, Jawa Barat</span>
+      <span class="sep">·</span><a href="https://github.com/fikri10setyawan-design" target="_blank" rel="noopener">github.com/fikri10setyawan-design</a>
+    </div>
+  </header>
+
+  <section class="op-section">
+    <h2>Profil Singkat</h2>
+    <div class="dim-line"></div>
+    <div class="op-body">
+      <p>Berpengalaman sebagai operator produksi manufaktur dengan pemahaman kuat pada SOP, kontrol kualitas, dan target produksi — dibentuk oleh prinsip &ldquo;selisih 1 pcs = uang&rdquo;. Di luar lantai produksi, aktif mengembangkan kemampuan Excel tingkat lanjut dan otomasi data dengan Python secara mandiri, serta menerapkannya pada proyek nyata. Disiplin, teliti, dan terbuka untuk peluang baru di bidang manufaktur maupun data/otomasi.</p>
+    </div>
+  </section>
+
+  <section class="op-section">
+    <h2>Pendidikan</h2>
+    <div class="dim-line"></div>
+    <div class="op-body">
+      <div class="row"><span class="name">SMK Negeri 2 Klaten — Teknik Kendaraan Ringan</span><span class="leader"></span><span class="date">2014 – 2018</span></div>
+      <p>Pendidikan formal 4 tahun yang membangun fondasi teknis: membaca ukuran, toleransi, dan logika mekanis — dasar yang diterapkan langsung di dunia manufaktur presisi.</p>
+    </div>
+  </section>
+
+  <section class="op-section">
+    <h2>Pengalaman Kerja</h2>
+    <div class="dim-line"></div>
+    <div class="op-body">
+      <div class="row"><span class="name">PT Braja Mukti Cakra — Operator Produksi</span><span class="leader"></span><span class="date">2018 – 2020</span></div>
+      <p>Jenjang saya selanjutnya. Bekerja di perusahaan manufaktur produsen suku cadang otomotif roda empat. Dengan berbekal ilmu dan skill yang telah diperoleh selama pendidikan, membawa saya sampai di posisi ini.</p>
+      <div class="row"><span class="name">PT Braja Mukti Cakra — Operator Produksi</span><span class="leader"></span><span class="date">2021 – 2026</span></div>
+      <p>Kesempatan kedua saya dalam berkontribusi. Pasca krisis covid-19, percepatan dan pemulihan ekonomi menjadi prioritas perusahaan. Berbekal pengalaman saya di kesempatan pertama, perusahaan memberikan kembali kepercayaan kepada saya.</p>
+    </div>
+  </section>
+
+  <section class="op-section">
+    <h2>Kemampuan Data &amp; Otomasi (Self-Developed)</h2>
+    <div class="dim-line"></div>
+    <div class="op-body">
+      <h3 class="sub">Excel Tingkat Lanjut</h3>
+      <p>Berawal dari kelas berbayar Advanced Excel — LearnByte (lulus dengan nilai A, Agustus 2025) untuk memahami konteks dan dasar teknik lanjutan. Dikembangkan lebih jauh secara mandiri menjadi template-template original:</p>
+      <ul class="tick">
+        <li>Dynamic arrays (FILTER, SEQUENCE) dan array formula tingkat lanjut.</li>
+        <li>ActiveX &amp; Form Controls, VBA/Macro.</li>
+        <li>Excel Tables dengan running balance / saldo berjalan.</li>
+        <li>Fitur search-as-you-type.</li>
+        <li>Total 26 teknik unik terdokumentasi di lima file kerja nyata.</li>
+      </ul>
+      <h3 class="sub">Python untuk Otomasi Data</h3>
+      <p>Belajar logika dan struktur program lewat proses vibe coding — berkolaborasi dengan AI assistant (Claude, Gemini, Antigravity) untuk implementasi, dengan arah dan logika program dipahami dan dipegang sendiri, bukan sekadar menyalin hasil.</p>
+      <ul class="tick">
+        <li>Parsing data (contoh: PDF jadwal shift produksi) menjadi tracker Excel otomatis.</li>
+        <li>Proyek publik di GitHub: aplikasi-badminton-v1.1 dan Data-kock.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="op-section">
+    <h2>Sertifikasi</h2>
+    <div class="dim-line"></div>
+    <div class="op-body">
+      <ul class="tick">
+        <li>Advanced Excel — LearnByte, Nilai A (Agustus 2025) — Certificate ID: LBPCEXCEL-8420486525</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="op-section">
+    <h2>Keterampilan</h2>
+    <div class="dim-line"></div>
+    <div class="op-body">
+      <div class="tags">
+        <span class="tag">CNC Milling — Makino a51nx</span>
+        <span class="tag">G-Code Dasar</span>
+        <span class="tag">Jangka Sorong &amp; Mikrometer</span>
+        <span class="tag">Excel Lanjut (Dynamic Array, VBA)</span>
+        <span class="tag">Python Dasar</span>
+        <span class="tag">Git &amp; GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="op-section">
+    <h2>Bahasa</h2>
+    <div class="dim-line"></div>
+    <div class="op-body">
+      <p class="lang-line">Bahasa Indonesia (Native) · Bahasa Inggris (Dasar)</p>
+    </div>
+  </section>
+
+  <section class="op-section">
+    <h2>Hobi &amp; Kegiatan Organisasi</h2>
+    <div class="dim-line"></div>
+    <div class="op-body">
+      <p>Administrator klub badminton — mengelola keanggotaan, jadwal latihan, dan komunikasi rutin komunitas, mencerminkan ketelitian dan konsistensi yang sama di luar konteks pekerjaan formal.</p>
+    </div>
+  </section>
+
+  <footer class="rev">CV — OCTAVIAN FIKRI SETYAWAN — REV. 2026-08</footer>
+</main>
+
+<script>
+  // Progressive enhancement only: content is already visible via CSS
+  // defaults above. This just layers on a subtle entrance transition
+  // when supported — it never gates visibility.
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var sections = document.querySelectorAll('.op-section');
+    sections.forEach(function (s) { s.classList.add('reveal'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+</script>
+
+</body>
+</html>
